@@ -1,0 +1,300 @@
+:root {
+  --bg: #ffe8d6;
+  --surface: rgba(255, 248, 241, 0.72);
+  --surface-strong: rgba(255, 248, 241, 0.92);
+  --brand: #e8b184;
+  --brand-deep: #cf9566;
+  --text: #8f5f39;
+  --text-soft: rgba(143, 95, 57, 0.72);
+  --shadow: 0 22px 60px rgba(188, 124, 82, 0.18);
+  --radius-xl: 32px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --content-width: 30rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Louis George Cafe", "Avenir Next", "Century Gothic", "Trebuchet MS", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(232, 177, 132, 0.22), transparent 28%),
+    linear-gradient(180deg, #fff4eb 0%, var(--bg) 42%, #ffeede 100%);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.ambient {
+  position: absolute;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(232, 177, 132, 0.32) 0%, rgba(232, 177, 132, 0) 72%);
+  pointer-events: none;
+}
+
+.ambient-top {
+  width: 24rem;
+  height: 24rem;
+  top: -9rem;
+  right: -8rem;
+}
+
+.ambient-bottom {
+  width: 18rem;
+  height: 18rem;
+  left: -5rem;
+  bottom: -4rem;
+}
+
+.linktree-card {
+  position: relative;
+  width: min(100%, var(--content-width));
+  padding: 1.3rem;
+  border-radius: calc(var(--radius-xl) + 0.5rem);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 248, 241, 0.35)),
+    var(--surface);
+  border: 1px solid rgba(232, 177, 132, 0.34);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  animation: card-in 700ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.hero {
+  text-align: center;
+  padding: 0.5rem 0 1.4rem;
+}
+
+.logo-wrap {
+  width: min(58vw, 15rem);
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 10px 24px rgba(207, 149, 102, 0.12));
+}
+
+.brand-logo {
+  width: 100%;
+  height: auto;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-soft);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.actions {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.cta-button {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.05rem;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+  border: 1px solid transparent;
+  box-shadow: 0 16px 30px rgba(188, 124, 82, 0.12);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+}
+
+.cta-button:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.cta-button:focus-visible {
+  outline: 3px solid rgba(232, 177, 132, 0.35);
+  outline-offset: 3px;
+}
+
+.primary {
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%);
+  color: #fff8f1;
+}
+
+.primary:hover {
+  box-shadow: 0 20px 36px rgba(188, 124, 82, 0.22);
+}
+
+.secondary {
+  background: var(--surface-strong);
+  color: var(--text);
+  border-color: rgba(232, 177, 132, 0.42);
+}
+
+.secondary:hover {
+  background: #fff6ef;
+  box-shadow: 0 20px 36px rgba(188, 124, 82, 0.16);
+}
+
+.button-icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.secondary .button-icon {
+  background: rgba(232, 177, 132, 0.14);
+}
+
+.button-icon svg {
+  width: 1.45rem;
+  height: 1.45rem;
+}
+
+.button-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: left;
+}
+
+.button-copy strong {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.button-copy small {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: inherit;
+  opacity: 0.82;
+}
+
+.about {
+  margin-top: 1.45rem;
+  padding: 1.35rem 1.2rem 1.1rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 252, 248, 0.5);
+  border: 1px solid rgba(232, 177, 132, 0.24);
+  text-align: center;
+}
+
+.section-label {
+  margin: 0 0 0.65rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.about h1 {
+  margin: 0 0 0.7rem;
+  font-family: "NewYork", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: clamp(1.55rem, 4.5vw, 2rem);
+  line-height: 1.12;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.about p:last-child {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--text-soft);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 500ms ease,
+    transform 500ms ease;
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (min-width: 48rem) {
+  .page-shell {
+    padding: 2.25rem;
+  }
+
+  .linktree-card {
+    padding: 1.5rem;
+  }
+
+  .hero {
+    padding-bottom: 1.65rem;
+  }
+
+  .logo-wrap {
+    width: 16rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
