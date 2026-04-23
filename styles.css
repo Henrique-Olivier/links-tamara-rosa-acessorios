@@ -173,6 +173,10 @@ a {
   height: 4rem;
   border-radius: 1rem;
   background: rgba(255, 255, 255, 0.16);
+
+  img{
+    width: 16px;
+  }
 }
 
 .secondary .button-icon {
